@@ -13,3 +13,23 @@ ctx:strokeRect(200, 50, 100, 75, '#00ff00', 3) -- Green outline, 3px thick
 
 -- Clear a rectangular area 
 ctx:clearRect(80, 80, 40, 40) -- Clear 40x40 area
+
+shaderCtx:source([[
+    shader_type canvas_item;
+    
+    uniform float time : hint_range(0.0, 10.0) = 1.0;
+    uniform vec2 resolution;
+    
+    void fragment() {
+        vec2 uv = UV;
+        
+        // Create animated rainbow effect
+        vec3 color = vec3(
+            0.5 + 0.5 * cos(time + uv.x * 6.0),
+            0.5 + 0.5 * cos(time + uv.y * 6.0 + 2.0),
+            0.5 + 0.5 * cos(time + (uv.x + uv.y) * 6.0 + 4.0)
+        );
+        
+        COLOR = vec4(color, 1.0);
+    }
+]])
