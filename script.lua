@@ -16,10 +16,7 @@ ctx:clearRect(80, 80, 40, 40) -- Clear 40x40 area
 
 shaderCtx:source([[
     shader_type canvas_item;
-    
-    uniform float time : hint_range(0.0, 10.0) = 1.0;
-    uniform vec2 resolution;
-    
+        
     void fragment() {
         vec2 uv = UV;
         
