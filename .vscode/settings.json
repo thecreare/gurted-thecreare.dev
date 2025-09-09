@@ -1,0 +1,8 @@
+{
+    "watch-run.targetList": [
+        {
+            "target": "/.git/index",
+            "task": "insert_git_hash"
+        },
+    ]
+}

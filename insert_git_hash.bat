@@ -1,0 +1,1 @@
+git rev-parse HEAD > git_commit_hash.txt
